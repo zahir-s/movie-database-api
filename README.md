@@ -42,10 +42,15 @@ As per given task, forseen data volume starts a 5M Movie entries, which scales u
 and API access volume starts at 15M/day and scales up to 75M hits/day.
 
 First, to address the data volume:
-    Such large amounts of data become quite unbareable for SQLite which is implemented currently in the code, and will easily develop latency issues during even simple DB operations. So I would suggest moving to a NoSQL DB engine like MongoDB or if the data volume magnifies even more Apache Hadoop or a similar Big Data solution may be used.
+
+Such large amounts of data become quite unbareable for SQLite which is implemented currently in the code, and will easily develop latency issues during even simple DB operations. So I would suggest moving to a NoSQL DB engine like MongoDB or if the data volume magnifies even more Apache Hadoop or a similar Big Data solution may be used.
+
 
 Second, for handling the volume of API Requests:
-    We can start by restricting unauthenticated API GET requests by applying a per-day limit per host address. We can even monetize the service to an extent by providing larger limits to registered and authenticated users, which can grow by the tier of the user account level.
-    Then to come to the server architecture, we can move to the traditional approach of using Nginx as a load-balancer, where the Nginx endpoints can balance request queing for the central request processer, or we can opt for AWS instances that can automate the whole thing for us like increasing or decresing instance copies as per the incoming traffic volume.
-    Now for scaling the request processer, I've heard that Python's Celery module was built and is being used for problems like ours. Celery being real-time and asynchronous it can help us leverage a distributed request processing system, to reduce queue lengths significantly.
+
+We can start by restricting unauthenticated API GET requests by applying a per-day limit per host address. We can even monetize the service to an extent by providing larger limits to registered and authenticated users, which can grow by the tier of the user account level.
+
+Then to come to the server architecture, we can move to the traditional approach of using Nginx as a load-balancer, where the Nginx endpoints can balance request queing for the central request processer, or we can opt for AWS instances that can automate the whole thing for us like increasing or decresing instance copies as per the incoming traffic volume.
+
+Now for scaling the request processer, I've heard that Python's Celery module was built and is being used for problems like ours. Celery being real-time and asynchronous it can help us leverage a distributed request processing system, to reduce queue lengths significantly.
         
