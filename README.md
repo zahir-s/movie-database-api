@@ -27,8 +27,10 @@ From here you have 2 options:
 ## Admin and Users:
     
 *Admin functionality is implemented using Django's built-in admin site*
+
 **Admin:** To access the admin functionality follow: [http://localhost:8000/admin/](http://localhost:8000/admin/)
     - username: admin Password: adminpass1
+
 **Users:** You must first register a user by following: [http://localhost:8000/movies/signup/](http://localhost:8000/movies/signup/) or clicking the "Sign Up" link at the homepage.
 Once the user signs up, he will be redirected to the [Login page](http://localhost:8000/movies/accounts/login/), here you can login and then use the service.
 
