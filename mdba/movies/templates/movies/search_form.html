@@ -1,0 +1,6 @@
+<h2>Search Movie DB</h2>
+<form action="/movies/search/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>

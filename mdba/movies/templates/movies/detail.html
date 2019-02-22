@@ -1,0 +1,21 @@
+<h2>{{ movie.movie_title }}</h2><br>
+<h3>Year: {{ movie.title_year }}</h3><br>
+<h4>Genres: {{ movie.genres }}<br>
+<h4>Duration: {{ movie.duration }} minutes.<br>
+<h4>Type: {{ movie.color }}<br>
+<br>
+<p><strong>Direction: {{ movie.director_name }} </strong></p><br>
+<p><strong>Language: {{ movie.language }} </strong></p><br>
+<p><strong>Country: {{ movie.country }} </strong></p><br>
+<p><strong>Cast:</strong></p><br>
+{% if movie.actor_1_name %}
+    {{ movie.actor_1_name }}<br>
+{% endif %}
+{% if movie.actor_2_name %}
+    {{ movie.actor_2_name }}<br>
+{% endif %}
+{% if movie.actor_3_name %}
+    {{ movie.actor_3_name }}<br>
+{% endif %}
+<br>
+<p>Plot Keywords: {{ movie.plot_keywords }}</p>

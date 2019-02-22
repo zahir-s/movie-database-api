@@ -1,0 +1,22 @@
+<h2>Search Movies</h2><br>
+
+{% if search_keys %}
+    <h3>Search Keys:</h3><br>
+    {% for key, value in search_keys.items %}
+        {{ key.title }}: {{ value }} <br>
+    {% endfor %}
+    
+    <h4>Matching Movie Titles</h4>
+    {% if search_results %}
+        <ul>
+        {% for movie in search_results %}
+            <li><a href="/movies/{{ movie.index }}/">{{ movie }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No movies in database.</p>
+    {% endif %}
+{% else %}
+    <p>No search criteria provided.</p>
+    
+{% endif %}
